@@ -1,0 +1,90 @@
+.menu-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    padding: 0 20px 100px 20px;
+}
+
+.menu-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-img-box {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background: #eee;
+    overflow: hidden;
+}
+
+.menu-img { width: 100%; height: 100%; object-fit: cover; }
+
+.menu-details {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: space-between;
+}
+
+.menu-name {
+    font-size: 14px;
+    font-weight: 700;
+    margin: 0 0 5px 0;
+    color: var(--color-dark-coffee);
+}
+
+.menu-price {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--color-warm-gold);
+}
+
+.btn-add-cart {
+    margin-top: 8px;
+    width: 100%;
+    padding: 8px;
+    background: transparent;
+    border: 1px solid var(--color-dark-coffee);
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/* ... css sebelumnya ... */
+
+/* --- STYLE UNTUK MENU HABIS --- */
+.menu-card.out-of-stock {
+    opacity: 0.6;             /* Membuat agak transparan/redup */
+    filter: grayscale(100%);  /* Membuat warna jadi hitam putih */
+    cursor: not-allowed;      /* Mengubah kursor jadi tanda dilarang */
+    position: relative;
+}
+
+/* Label "HABIS" di tengah gambar */
+.menu-card.out-of-stock .menu-img-box::after {
+    content: "HABIS";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px 15px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 4px;
+    z-index: 10;
+}
+
+/* Ubah tombol tambah jadi abu-abu */
+.menu-card.out-of-stock .btn-add-cart {
+    border-color: #999;
+    color: #555;
+    background-color: #eee;
+}

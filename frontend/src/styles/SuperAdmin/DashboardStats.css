@@ -1,0 +1,129 @@
+
+.login-container {
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+/* Overlay Gelap Tipis */
+.login-overlay {
+    background-color: rgba(0, 0, 0, 0.2);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+/* EFEK KACA (GLASSMORPHISM) */
+.glass-effect {
+    background: rgba(249, 248, 246, 0.75); 
+    backdrop-filter: blur(12px); 
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.6);       
+    box-shadow: 0 8px 32px 0 rgba(90, 74, 66, 0.2);   
+    padding: 3rem;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 380px;
+    text-align: center;
+}
+
+/* Typography */
+.cafe-name {
+    font-family: var(--font-heading, serif);
+    color: var(--color-dark-coffee, #5A4A42);
+    font-size: 2.5rem;
+    margin: 0;
+    margin-bottom: 0.5rem;
+}
+
+.welcome-text {
+    font-family: var(--font-body, sans-serif);        
+    color: var(--color-dark-coffee, #5A4A42);
+    opacity: 0.8;
+    margin-bottom: 2rem;
+    font-size: 0.95rem;
+}
+
+/* Form Styling */
+.form-group {
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--color-dark-coffee, #5A4A42);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.5px;
+}
+
+.form-input {
+    width: 100%;
+    padding: 14px;
+    background-color: rgba(255, 255, 255, 0.6);       
+    border: 1px solid var(--color-grayish-beige, #D9CFC7);
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-family: var(--font-body, sans-serif);        
+    font-size: 1rem;
+    color: var(--color-dark-coffee, #5A4A42);
+    transition: all 0.3s ease;
+}
+
+.form-input:focus {
+    outline: none;
+    background-color: #fff;
+    border-color: var(--color-warm-gold, #C9B59C);    
+    box-shadow: 0 0 0 3px rgba(201, 181, 156, 0.2);   
+}
+
+/* Tombol */
+.btn-primary {
+    width: 100%;
+    padding: 14px;
+    background-color: var(--color-dark-coffee, #5A4A42);
+    color: var(--color-white-cream, #F9F8F6);
+    border: none;
+    border-radius: 8px;
+    font-family: var(--font-body, sans-serif);        
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.btn-primary:hover {
+    background-color: var(--color-warm-gold, #C9B59C);
+    color: var(--color-dark-coffee, #5A4A42);
+    transform: translateY(-2px);
+}
+
+/* Error Message */
+.error-msg {
+    color: #a94442;
+    background-color: #f2dede;
+    border: 1px solid #ebccd1;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+}
+
+.footer-text {
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    color: var(--color-dark-coffee, #5A4A42);
+    opacity: 0.6;
+}

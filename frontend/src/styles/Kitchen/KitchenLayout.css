@@ -1,0 +1,75 @@
+/* Layout & Sidebar */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+:root {
+    --k-bg: #f1f2f6;
+    --k-sidebar: #d35400; /* Oranye Dapur */
+    --k-text: #2d3436;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--k-bg);
+    margin: 0;
+}
+
+.kitchen-layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+.kitchen-sidebar {
+    width: 250px;
+    background-color: var(--k-sidebar);
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.kitchen-brand {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    padding-bottom: 20px;
+}
+
+.chef-info {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.kitchen-nav a {
+    display: block;
+    padding: 12px 15px;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    margin-bottom: 5px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.kitchen-nav a:hover, .kitchen-nav a.active {
+    background-color: rgba(0,0,0,0.2);
+}
+
+.btn-logout-kitchen {
+    margin-top: auto;
+    background: rgba(0,0,0,0.3);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.kitchen-main {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+}

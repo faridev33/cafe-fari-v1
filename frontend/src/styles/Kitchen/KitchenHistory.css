@@ -1,0 +1,20 @@
+/* History Page */
+/* Kebanyakan style mirip dashboard, tapi kita bedakan warnanya */
+
+.history-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* Override warna tiket selesai */
+.order-ticket.history-item {
+    border-top: 5px solid #27ae60;
+    background-color: #f9fff9;
+}
+
+.history-empty {
+    text-align: center;
+    color: #777;
+    margin-top: 50px;
+}

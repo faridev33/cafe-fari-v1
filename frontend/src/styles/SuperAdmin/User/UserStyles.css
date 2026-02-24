@@ -1,0 +1,107 @@
+/* Container Utama */
+.user-container {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.header-action {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+/* Table Styles */
+.user-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.user-table th, .user-table td {
+    border-bottom: 1px solid #eee;
+    padding: 15px;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.user-table th {
+    background-color: #f8f9fa;
+    font-weight: 700;
+    color: #333;
+}
+
+.table-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* Bulat */
+    object-fit: cover;
+    border: 1px solid #ddd;
+}
+
+.no-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    color: #fff;
+}
+
+/* Badge Role */
+.role-badge {
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+}
+.role-superadmin { background-color: #6f42c1; }
+.role-waiter { background-color: #17a2b8; }
+.role-kitchen { background-color: #fd7e14; }
+.role-customer { background-color: #28a745; }
+
+/* Buttons */
+.btn-add, .btn-save, .btn-edit, .btn-delete, .btn-secondary {
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 12px;
+    font-size: 14px;
+    text-decoration: none;
+}
+.btn-add { background-color: #28a745; color: white; padding: 10px 20px; font-weight: bold;}
+.btn-save { background-color: #007bff; color: white; width: 100%; padding: 12px; font-size: 16px; margin-top: 20px;}
+.btn-edit { background-color: #ffc107; color: black; margin-right: 5px; }
+.btn-delete { background-color: #dc3545; color: white; }
+.btn-secondary { background-color: #6c757d; color: white; }
+
+/* Form Styles */
+.form-container { max-width: 600px; margin: 0 auto; }
+.form-group { margin-bottom: 20px; }
+.form-group label { display: block; margin-bottom: 8px; font-weight: 600; }
+.form-group input, .form-group select {
+    width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;
+}
+
+/* Upload Image (Sama seperti produk tapi lebih kecil/bulat jika mau) */
+.upload-layout { display: flex; gap: 20px; height: 120px; }
+.drop-zone {
+    flex: 1; border: 2px dashed #ccc; border-radius: 8px;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    cursor: pointer; background: #fafafa;
+}
+.preview-zone {
+    flex: 1; border: 1px solid #ddd; border-radius: 8px; padding: 5px;
+    display: flex; justify-content: center; align-items: center; position: relative;
+}
+.preview-img { height: 100%; width: 100%; object-fit: contain; }
+.btn-remove-img {
+    position: absolute; top: 5px; right: 5px; background: red; color: white;
+    border: none; padding: 2px 6px; font-size: 10px; cursor: pointer;
+}

@@ -1,0 +1,111 @@
+/* Container Utama: Membagi layar menjadi Sidebar (kiri) dan Konten (kanan) */
+.admin-container {
+    display: flex;
+    min-height: 100vh;
+    background-color: var(--color-light-beige);
+}
+
+/* --- SIDEBAR (NAVBAR KIRI) --- */
+.sidebar {
+    width: 260px;
+    background-color: var(--color-dark-coffee);
+    color: var(--color-white-cream);
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    box-shadow: 4px 0 10px rgba(90, 74, 66, 0.1);
+    position: fixed; /* Agar sidebar tetap diam saat discroll */
+    height: 100vh;
+    box-sizing: border-box;
+}
+
+.sidebar-header {
+    margin-bottom: 3rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 1rem;
+}
+
+.sidebar-title {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    margin: 0;
+    color: var(--color-warm-gold);
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-grow: 1; /* Mendorong tombol logout ke bawah */
+}
+
+.menu-item {
+    margin-bottom: 0.5rem;
+}
+
+.menu-link {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    text-decoration: none;
+    color: var(--color-grayish-beige);
+    border-radius: 8px;
+    font-family: var(--font-body);
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.menu-link:hover {
+    background-color: rgba(201, 181, 156, 0.1); /* Gold transparan */
+    color: var(--color-white-cream);
+    transform: translateX(5px);
+}
+
+/* Status Aktif (Menu yang sedang dipilih) */
+.menu-link.active {
+    background-color: var(--color-warm-gold);
+    color: var(--color-dark-coffee);
+    font-weight: 600;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.sidebar-footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 1rem;
+}
+
+.btn-logout {
+    width: 100%;
+    padding: 12px;
+    background-color: transparent;
+    border: 1px solid var(--color-grayish-beige);
+    color: var(--color-grayish-beige);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-logout:hover {
+    background-color: #a94442;
+    border-color: #a94442;
+    color: white;
+}
+
+/* --- KONTEN UTAMA (KANAN) --- */
+.main-content {
+    margin-left: 260px; /* Memberi ruang untuk sidebar */
+    flex: 1;
+    padding: 40px;
+    overflow-y: auto;
+}
+
+.page-header {
+    margin-bottom: 2rem;
+}
+
+.page-title {
+    font-family: var(--font-heading);
+    color: var(--color-dark-coffee);
+    font-size: 2rem;
+    margin: 0;
+}

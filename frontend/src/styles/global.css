@@ -1,0 +1,24 @@
+/* Import Font dari Google: 'Playfair Display' (Elegan/Klasik) dan 'Poppins' (Modern/Bersih) */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600&display=swap');
+
+:root {
+  /* DEFINISI WARNA (PALETTE) */
+  --color-white-cream: #F9F8F6;
+  --color-light-beige: #EFE9E3;
+  --color-grayish-beige: #D9CFC7;
+  --color-warm-gold: #C9B59C;
+  --color-dark-coffee: #5A4A42;
+  
+  /* Font Variables */
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Poppins', sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-body);
+  background-color: var(--color-light-beige);
+  color: var(--color-dark-coffee);
+  -webkit-font-smoothing: antialiased;
+}

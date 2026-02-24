@@ -1,0 +1,62 @@
+/* Container Menu Dapur */
+.stock-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.stock-card {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: center;
+    border: 1px solid #eee;
+    transition: 0.3s;
+}
+
+.stock-card.unavailable {
+    background-color: #f8d7da; /* Merah muda */
+    border-color: #f5c6cb;
+    opacity: 0.8;
+}
+
+.stock-img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.stock-name {
+    font-weight: bold;
+    color: #2d3436;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.stock-status {
+    font-size: 12px;
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.status-ok { background: #d4edda; color: #155724; }
+.status-no { background: #f8d7da; color: #721c24; }
+
+.btn-toggle {
+    width: 100%;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.btn-off { background-color: #dc3545; color: white; } /* Tombol Habiskan */
+.btn-on { background-color: #28a745; color: white; } /* Tombol Tersediakan */

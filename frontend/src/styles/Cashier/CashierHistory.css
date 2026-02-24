@@ -1,0 +1,186 @@
+/* frontend/src/styles/Cashier/CashierHistory.css */
+
+/* --- FILTER & CONTROL BAR --- */
+.history-controls {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(90, 74, 66, 0.05);
+    flex-wrap: wrap; /* Agar rapi di layar kecil */
+    align-items: center;
+}
+
+.control-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.control-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--c-coffee);
+    text-transform: uppercase;
+}
+
+/* Input Styles */
+.input-filter {
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-family: var(--font-b);
+    font-size: 14px;
+    color: #333;
+    outline: none;
+    min-width: 200px;
+}
+
+.input-filter:focus {
+    border-color: var(--c-gold);
+    box-shadow: 0 0 0 3px rgba(201, 181, 156, 0.2);
+}
+
+.select-filter {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background-color: #fff;
+    font-family: var(--font-b);
+    cursor: pointer;
+}
+
+/* Buttons */
+.btn-reset {
+    margin-top: auto; /* Agar sejajar tombol */
+    padding: 10px 20px;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    color: #666;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: 0.2s;
+    height: 40px; /* Samakan tinggi dengan input */
+}
+
+.btn-reset:hover {
+    background-color: #e2e6ea;
+    color: #333;
+}
+
+.btn-today {
+    margin-top: auto;
+    padding: 10px 20px;
+    background-color: var(--c-coffee);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    height: 40px;
+}
+
+.btn-today:hover {
+    background-color: var(--c-gold);
+}
+
+/* frontend/src/styles/Cashier/CashierHistory.css */
+
+/* --- CONTAINER UTAMA FILTER --- */
+.history-controls {
+    display: flex; /* KUNCI UTAMA: Agar berjejer ke samping */
+    align-items: flex-end; /* Agar Input dan Tombol sejajar di bawah */
+    gap: 15px; /* Jarak antar elemen */
+    margin-bottom: 25px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(90, 74, 66, 0.05);
+    flex-wrap: wrap; /* Agar responsif di layar kecil */
+    border: 1px solid #efe9e3;
+}
+
+/* --- GROUP (LABEL + INPUT) --- */
+.control-group {
+    display: flex;
+    flex-direction: column; /* Label di atas input */
+    gap: 6px;
+}
+
+.control-label {
+    font-size: 12px;
+    font-weight: 700;
+    color: #5A4A42; /* Warna Coffee */
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* --- INPUT & SELECT --- */
+.input-filter {
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif; /* Sesuaikan font */
+    font-size: 14px;
+    color: #333;
+    outline: none;
+    height: 42px; /* Tinggi fix agar sejajar tombol */
+    box-sizing: border-box;
+    transition: all 0.3s;
+}
+
+/* Khusus input pencarian agar agak lebar */
+.input-filter[type="text"] {
+    min-width: 250px;
+}
+
+.input-filter:focus {
+    border-color: #C9B59C; /* Warna Gold */
+    box-shadow: 0 0 0 3px rgba(201, 181, 156, 0.2);
+}
+
+/* --- GROUP TOMBOL --- */
+.button-group {
+    display: flex;
+    gap: 10px;
+    margin-left: auto; /* Dorong tombol ke paling kanan (opsional) */
+}
+
+/* --- TOMBOL STYLES --- */
+.btn-today {
+    height: 42px;
+    padding: 0 20px;
+    background-color: #5A4A42; /* Dark Coffee */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 13px;
+    transition: 0.2s;
+}
+
+.btn-today:hover {
+    background-color: #C9B59C; /* Gold saat hover */
+    color: #2c2420;
+}
+
+.btn-reset {
+    height: 42px;
+    padding: 0 20px;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    color: #666;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 13px;
+    transition: 0.2s;
+}
+
+.btn-reset:hover {
+    background-color: #e2e6ea;
+    color: #333;
+}
