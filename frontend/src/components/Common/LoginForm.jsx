@@ -24,24 +24,33 @@ export const LoginForm = () => {
       });
 
       const data = response.data;
-      
+
+      // Samakan penamaan role backend (admin, cashier, kitchen) dengan layout frontend
+      const roleMap = {
+        admin: 'SuperAdmin',
+        superadmin: 'SuperAdmin',
+        cashier: 'Cashier',
+        kitchen: 'Kitchen',
+        waiter: 'Waiter',
+        customer: 'Customer',
+      };
+      const role = roleMap[String(data.role).toLowerCase()] || data.role;
+
       // Simpan data user lengkap (bukan cuma role) agar layout bisa pakai
       const userData = {
         username: data.username,
-        role: data.role
+        role
       };
       localStorage.setItem('user', JSON.stringify(userData));
 
-      // --- LOGIKA PENGALIHAN HALAMAN (SESUAIKAN DENGAN BACKEND) ---
-      // Backend mengirim: "SuperAdmin", "Waiter", "Kitchen", "Customer"
-      
-      if (data.role === 'SuperAdmin') {
+      // --- LOGIKA PENGALIHAN HALAMAN ---
+      if (role === 'SuperAdmin') {
         navigate('/admin/dashboard');
-      } else if (data.role === 'Kitchen') {
+      } else if (role === 'Kitchen') {
         navigate('/kitchen');
-      } else if (data.role === 'Cashier') {
+      } else if (role === 'Cashier') {
         navigate('/cashier/dashboard');
-      } else if (data.role === 'Waiter') {
+      } else if (role === 'Waiter') {
         navigate('/waiter');
       } else {
         setError(`Role "${data.role}" tidak dikenali atau belum memiliki halaman.`);
@@ -55,6 +64,15 @@ export const LoginForm = () => {
         setError('Gagal terhubung ke server backend');
       }
     }
+  };
+
+  const handleQuickAccess = (role, path) => {
+    const dummyUser = {
+      username: role.toLowerCase(),
+      role: role
+    };
+    localStorage.setItem('user', JSON.stringify(dummyUser));
+    navigate(path);
   };
 
   return (
@@ -98,6 +116,42 @@ export const LoginForm = () => {
               MASUK
             </button>
           </form>
+
+          <div className="quick-access-section">
+            <div className="quick-access-divider">
+              <span>Akses Cepat (Demo / Dev)</span>
+            </div>
+            <div className="quick-access-grid">
+              <button 
+                type="button" 
+                className="btn-quick admin" 
+                onClick={() => handleQuickAccess('SuperAdmin', '/admin/dashboard')}
+              >
+                Super Admin
+              </button>
+              <button 
+                type="button" 
+                className="btn-quick cashier" 
+                onClick={() => handleQuickAccess('Cashier', '/cashier/dashboard')}
+              >
+                Kasir
+              </button>
+              <button 
+                type="button" 
+                className="btn-quick kitchen" 
+                onClick={() => handleQuickAccess('Kitchen', '/kitchen')}
+              >
+                Dapur
+              </button>
+              <button 
+                type="button" 
+                className="btn-quick customer" 
+                onClick={() => handleQuickAccess('Customer', '/customer/menu/1')}
+              >
+                Customer (Meja 1)
+              </button>
+            </div>
+          </div>
           
           <div className="footer-text">
             <p>© 2025 Cafe Management System</p>

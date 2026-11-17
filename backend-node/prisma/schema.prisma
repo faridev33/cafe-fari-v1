@@ -1,0 +1,80 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Product {
+  id          Int       @id @default(autoincrement())
+  name        String    @unique
+  category    String
+  price       Float
+  status      String    // Available / Out of Stock
+  imageUrl    String?   @map("image_url")
+  createdAt   DateTime  @default(now()) @map("created_at")
+  updatedAt   DateTime  @updatedAt @map("updated_at")
+  options     ProductOption[]
+
+  @@map("products")
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  username  String   @unique
+  password  String
+  role      String   // admin, cashier, kitchen
+  imageUrl  String?  @map("image_url")
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@map("users")
+}
+
+model Table {
+  id        Int      @id @default(autoincrement())
+  number    Int      @unique
+  capacity  Int
+  status    String   @default("Available") // Available, Occupied
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@map("tables")
+}
+
+model Order {
+  id              Int      @id @default(autoincrement())
+  tableId         String   @map("table_id")
+  customerName    String   @map("customer_name")
+  totalPrice      Float    @map("total_price")
+  paymentMethod   String   @map("payment_method")
+  paymentStatus   String   @default("UNPAID") @map("payment_status") // UNPAID, PAID
+  cookingStatus   String   @default("QUEUED") @map("cooking_status") // QUEUED, COOKING, DONE
+  items           Json
+  createdAt       DateTime @default(now()) @map("created_at")
+  updatedAt       DateTime @updatedAt @map("updated_at")
+
+  @@map("orders")
+}
+
+model ProductOption {
+  id          Int           @id @default(autoincrement())
+  productId   Int           @map("product_id")
+  product     Product       @relation(fields: [productId], references: [id], onDelete: Cascade)
+  name        String
+  choices     OptionChoice[]
+
+  @@map("product_options")
+}
+
+model OptionChoice {
+  id          Int            @id @default(autoincrement())
+  optionId    Int            @map("option_id")
+  option      ProductOption  @relation(fields: [optionId], references: [id], onDelete: Cascade)
+  name        String
+  extraPrice  Float          @default(0) @map("extra_price")
+
+  @@map("option_choices")
+}

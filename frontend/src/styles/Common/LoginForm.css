@@ -130,6 +130,90 @@
     font-size: 0.9rem;
   }
   
+
+/* Quick Access Buttons */
+.quick-access-section {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.quick-access-divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 15px 0 12px;
+}
+
+.quick-access-divider::before,
+.quick-access-divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid rgba(90, 74, 66, 0.2);
+}
+
+.quick-access-divider span {
+  padding: 0 10px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: var(--color-dark-coffee);
+  opacity: 0.7;
+  text-transform: uppercase;
+}
+
+.quick-access-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+.btn-quick {
+  padding: 10px 8px;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.btn-quick:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+.btn-quick.admin {
+  background-color: #6f42c1;
+  color: #fff;
+}
+.btn-quick.admin:hover {
+  background-color: #59339d;
+}
+
+.btn-quick.cashier {
+  background-color: #0d6efd;
+  color: #fff;
+}
+.btn-quick.cashier:hover {
+  background-color: #0b5ed7;
+}
+
+.btn-quick.kitchen {
+  background-color: #fd7e14;
+  color: #fff;
+}
+.btn-quick.kitchen:hover {
+  background-color: #dc6502;
+}
+
+.btn-quick.customer {
+  background-color: #198754;
+  color: #fff;
+}
+.btn-quick.customer:hover {
+  background-color: #157347;
+}
   .footer-text {
       margin-top: 2rem;
       font-size: 0.8rem;

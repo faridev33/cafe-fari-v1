@@ -6,6 +6,8 @@ import SuperAdminLayout from './layouts/SuperAdmin/SuperAdminLayout';
 import CustomerLayout from './layouts/Customer/CustomerLayout';
 import CashierLayout from './layouts/Cashier/CashierLayout';
 import KitchenLayout from './layouts/Kitchen/KitchenLayout'; 
+import WaiterLayout from './layouts/Waiter/WaiterLayout';
+import WaiterDashboard from './pages/Waiter/WaiterDashboard';
 
 // --- IMPORT PAGES ---
 import LoginPage from './pages/LoginPage';
@@ -70,6 +72,11 @@ function App() {
             <Route path="dashboard" element={<KitchenDashboard />} />
             <Route path="history" element={<KitchenHistory />} /> 
             <Route path="menu" element={<KitchenMenu />} /> {/* <--- (NEW) Halaman Stok Menu */}
+        </Route>
+
+        {/* Rute Waiter */}
+        <Route path="/waiter" element={<WaiterLayout />}>
+            <Route index element={<WaiterDashboard />} />
         </Route>
 
         {/* 5. Rute Super Admin (Panel Utama) */}
